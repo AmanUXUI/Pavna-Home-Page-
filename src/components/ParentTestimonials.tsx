@@ -183,15 +183,7 @@ export default function ParentTestimonials() {
           </div>
 
           {/* Slider navigation and dots */}
-          <div className="flex items-center justify-between w-full px-2">
-            <button 
-              onClick={prevSlide}
-              aria-label="Previous parent review"
-              className="w-10 h-10 rounded-full border border-gray-200 bg-white text-brand-navy flex items-center justify-center hover:bg-[#f48120] hover:text-white transition-all duration-300 cursor-pointer shadow-sm active:scale-95"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            
+          <div className="flex items-center justify-center w-full px-2">
             <div className="flex gap-2 items-center">
               {REELS_DATA.map((_, idx) => (
                 <button
@@ -202,14 +194,6 @@ export default function ParentTestimonials() {
                 />
               ))}
             </div>
-
-            <button 
-              onClick={nextSlide}
-              aria-label="Next parent review"
-              className="w-10 h-10 rounded-full border border-gray-200 bg-white text-brand-navy flex items-center justify-center hover:bg-[#f48120] hover:text-white transition-all duration-300 cursor-pointer shadow-sm active:scale-95"
-            >
-              <ChevronRight size={18} />
-            </button>
           </div>
         </div>
 

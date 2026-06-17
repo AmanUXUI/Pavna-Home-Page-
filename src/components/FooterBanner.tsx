@@ -14,11 +14,11 @@ export default function FooterBanner() {
           {/* Mobile version */}
           <source 
             media="(max-width: 768px)" 
-            srcSet="https://i.postimg.cc/BvdTGGBg/BG-(2).png" 
+            srcSet="https://i.postimg.cc/VLyRNdzG/Banner-Mobile.webp" 
           />
           {/* Desktop version */}
           <img 
-            src="https://i.postimg.cc/MH50MLrR/Banner.jpg" 
+            src="https://i.postimg.cc/xddGZm3h/Banner-Desktop.webp" 
             alt="Pavna School Banner" 
             className="w-full h-auto block"
           />

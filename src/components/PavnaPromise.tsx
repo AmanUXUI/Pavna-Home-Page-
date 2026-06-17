@@ -3,7 +3,7 @@ import { ArrowDown } from 'lucide-react';
 
 export default function PavnaPromise() {
   return (
-    <section className="py-16 lg:py-24 bg-white px-6">
+    <section className="pt-0 pb-16 lg:py-24 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="relative min-h-0 lg:min-h-[420px] flex flex-col lg:flex-row lg:items-center px-6 pt-10 pb-0 sm:px-12 md:px-20 md:py-16 rounded-[24px] sm:rounded-[32px] lg:overflow-visible overflow-hidden">
           {/* Background Box with Clipping */}
