@@ -48,13 +48,13 @@ export default function BoardingSection() {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-12">
           
           {/* Left Content */}
-          <div className="w-full lg:w-[42%]">
+          <div className="w-full lg:w-[42%] flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-6"
+              className="flex items-center justify-center lg:justify-start gap-3 mb-6 w-full"
             >
               <div className="w-12 h-[2px] bg-brand-orange"></div>
               <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange">BOARDING LIFE</span>
@@ -66,12 +66,12 @@ export default function BoardingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-[28px] sm:text-[36px] md:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[56px] font-bold text-brand-navy mb-8 md:mb-14 tracking-tight"
+              className="text-[28px] sm:text-[36px] md:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[56px] font-bold text-brand-navy mb-8 md:mb-14 tracking-tight text-center lg:text-left"
             >
               A Home Away <br className="hidden md:block" /> From Home
             </motion.h2>
  
-            <div className="space-y-10">
+            <div className="space-y-10 text-left w-full">
               {FEATURES.map((feature, i) => (
                 <motion.div 
                   key={i}
