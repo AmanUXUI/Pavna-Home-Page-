@@ -54,7 +54,7 @@ export default function ImageGallery() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section id="stages-gallery" className="relative w-full h-[580px] sm:h-[650px] md:h-[900px] overflow-hidden bg-brand-navy flex flex-row">
+    <section id="stages-gallery" className="relative w-full h-auto md:h-[900px] overflow-hidden bg-brand-navy flex flex-row">
       {/* Academics Vertical Banner */}
       <div className="w-8 sm:w-10 md:w-12 lg:w-14 bg-[#FFCC00] flex items-center justify-center flex-shrink-0 z-20 shadow-[6px_0_20px_rgba(0,0,0,0.15)] relative">
         <span 
@@ -70,7 +70,7 @@ export default function ImageGallery() {
       </div>
 
       {/* Cards Container */}
-      <div className="relative z-10 flex-1 h-full flex flex-col md:flex-row">
+      <div className="relative z-10 flex-1 h-auto md:h-full flex flex-col md:flex-row">
         {STAGES.map((stage, i) => (
           <div
             key={stage.id}
@@ -78,7 +78,7 @@ export default function ImageGallery() {
             onClick={() => setActiveIdx(i)}
             className={cn(
               "relative group transition-all duration-700 cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-white/10 last:border-0",
-              activeIdx === i ? "flex-[4.2] md:flex-[2] bg-brand-navy/0" : "flex-1 bg-black/40 hover:bg-black/20"
+              activeIdx === i ? "aspect-square md:aspect-auto md:flex-[2] bg-brand-navy/0" : "h-20 md:h-full md:flex-1 bg-black/40 hover:bg-black/20"
             )}
           >
             {/* Hover Highlight (Stroke) */}
@@ -115,22 +115,28 @@ export default function ImageGallery() {
             </div>
 
             {/* Content Overlay */}
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-12 z-30 pointer-events-none">
-              <div className="flex flex-col h-full">
+            <div className={cn(
+              "absolute inset-x-0 z-30 pointer-events-none transition-all duration-500",
+              activeIdx === i ? "bottom-0 p-5 sm:p-8 md:p-12" : "top-0 p-4 md:p-12 h-full flex items-center"
+            )}>
+              <div className="flex flex-col justify-end h-full w-full">
                 <motion.div
                   initial={false}
                   animate={{ 
-                    y: activeIdx === i ? 0 : 20,
+                    y: activeIdx === i ? 0 : 0,
                     opacity: activeIdx === i ? 1 : 0.7
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <span className="text-[10px] md:text-[11px] font-bold text-yellow-400 uppercase tracking-[2px] mb-1.5 block">
+                  <span className={cn(
+                    "text-[10px] md:text-[11px] font-bold text-yellow-400 uppercase tracking-[2px] mb-1.5 block",
+                    activeIdx === i ? "block" : "hidden md:block"
+                  )}>
                     {stage.tag}
                   </span>
                   <h3 className={cn(
-                    "text-lg sm:text-xl md:text-4xl font-bold text-white transition-all duration-500",
-                    activeIdx === i ? "mb-3 md:mb-6" : "mb-0"
+                    "text-sm sm:text-base md:text-3xl lg:text-4xl font-bold text-white transition-all duration-[400ms]",
+                    activeIdx === i ? "text-lg sm:text-xl md:text-3xl lg:text-4xl mb-2 md:mb-6" : "mb-0"
                   )}>
                     {stage.title}
                   </h3>
