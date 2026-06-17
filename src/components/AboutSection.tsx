@@ -23,7 +23,7 @@ export default function AboutSection() {
     {
       title: "Apple Distinguished School",
       description: "Recognized as a hub of innovation, leadership, and educational excellence through tech-enabled learning.",
-      url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200",
+      url: "https://i.postimg.cc/mZqHLqNS/Apple-BG.jpg",
       icon: <Smartphone size={16} className="stroke-[2.5]" />
     },
     {
