@@ -30,21 +30,21 @@ export default function CambridgeSection() {
       <div className="max-w-7xl mx-auto">
         
         {/* Upper Level: Header Title Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center lg:items-start mb-16 text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 flex flex-col items-center lg:items-start"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
               <div className="w-12 h-[2px] bg-brand-orange"></div>
               <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange">GLOBAL STANDARD</span>
               <div className="w-12 h-[2px] bg-brand-orange"></div>
             </div>
             
-            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] leading-[34px] sm:leading-[44px] md:leading-[52px] tracking-[-1.2px] font-bold text-brand-navy font-serif">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] leading-[34px] sm:leading-[44px] md:leading-[52px] tracking-[-1.2px] font-bold text-brand-navy font-serif text-center lg:text-left">
               Cambridge International <span className="text-brand-orange">Education</span>
             </h2>
           </motion.div>
@@ -56,7 +56,7 @@ export default function CambridgeSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-7"
           >
-            <p className="text-[16px] text-[#4B5563] leading-[24px] font-medium md:pl-4 md:border-l-2 md:border-gray-100 font-gill max-w-2xl mb-0 lg:mb-12">
+            <p className="text-[16px] text-[#4B5563] leading-[24px] font-medium lg:pl-6 lg:border-l-2 lg:border-gray-100 font-gill max-w-2xl mb-0 lg:mb-12 text-center lg:text-left mx-auto lg:mx-0">
               At Pavna International School, we deliver a world-class Cambridge International Education that inspires curiosity, critical thinking, creativity, and academic excellence. Through globally benchmarked learning experiences, students develop the confidence, knowledge, and future-ready skills needed to thrive in an ever-evolving world.
             </p>
           </motion.div>

@@ -10,12 +10,14 @@ import {
   Cpu, 
   School, 
   Globe, 
-  Award 
+  Award,
+  ChevronDown
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export default function AboutSection() {
   const [[activeImageIdx, direction], setActiveImage] = useState([0, 0]);
+  const [isMobile, setIsMobile] = useState(false);
 
   const campusImages = [
     {
@@ -69,11 +71,45 @@ export default function AboutSection() {
   ];
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
     const timer = setInterval(() => {
-      setActiveImage((prev) => [(prev[0] + 1) % campusImages.length, 1]);
+      setActiveImage((prev) => {
+        const nextIdx = (prev[0] + 1) % campusImages.length;
+        return [nextIdx, 1];
+      });
     }, 6000);
     return () => clearInterval(timer);
-  }, [campusImages.length]);
+  }, [campusImages.length, isMobile]);
+
+  const handleItemClick = (idx: number) => {
+    if (isMobile) {
+      setActiveImage((prev) => {
+        const prevIdx = prev[0];
+        if (prevIdx === idx) {
+          return [-1, 0];
+        } else {
+          return [idx, idx > prevIdx ? 1 : -1];
+        }
+      });
+    } else {
+      setActiveImage((prev) => {
+        const prevIdx = prev[0];
+        if (prevIdx === idx) return prev;
+        return [idx, idx > prevIdx ? 1 : -1];
+      });
+    }
+  };
+
+  const displayImageIdx = activeImageIdx === -1 ? 0 : activeImageIdx;
 
   return (
     <section id="about-pavna" className="bg-[#FDFCFB] py-16 md:py-24 px-4 sm:px-8 md:px-16 border-t border-b border-gray-200 font-gill overflow-hidden">
@@ -84,7 +120,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center lg:items-start"
+            className="flex flex-col items-center lg:items-start w-full"
           >
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 w-full">
               <div className="w-12 h-[2px] bg-brand-orange"></div>
@@ -97,40 +133,78 @@ export default function AboutSection() {
               A Future of Possibilities
             </h2>
             
-            <p className="text-gray-600 text-[16px] leading-[24px] font-medium mb-12 max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+            <p className="text-gray-600 text-[16px] leading-[24px] font-medium mb-6 max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
               For nearly three decades, Pavna has been quietly raising a different kind of student, one who thinks independently, leads with empathy, and walks into the world ready for it. As one of the most respected international curriculum schools in Uttar Pradesh, we blend rigorous academics with the warmth of a true school community.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-              {campusImages.map((usp, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => setActiveImage([i, i > activeImageIdx ? 1 : -1])}
-                  className={cn(
-                    "flex items-center text-left gap-4 border rounded-xl p-4 transition-all duration-350 group cursor-pointer w-full focus:outline-none",
-                    activeImageIdx === i 
-                      ? "bg-[#f48120]/5 border-[#f48120]/40 shadow-[0_12px_24px_-10px_rgba(244,129,32,0.18)]" 
-                      : "bg-white border-neutral-100/80 hover:shadow-[0_10px_20px_-8px_rgba(0,0,0,0.04)] hover:border-gray-200"
-                  )}
-                >
-                  <div className={cn(
-                    "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-350",
-                    activeImageIdx === i 
-                      ? "bg-[#f48120] text-white" 
-                      : "bg-[#f48120]/5 text-[#f48120] group-hover:bg-[#f48120] group-hover:text-white"
-                  )}>
-                    <div className="flex items-center justify-center w-full h-full">
-                      {usp.icon}
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-0 w-full">
+              {campusImages.map((usp, i) => {
+                const isOpen = activeImageIdx === i;
+                return (
+                  <div 
+                    key={i} 
+                    className={cn(
+                      "w-full flex flex-col border rounded-xl transition-all duration-300 overflow-hidden",
+                      isOpen 
+                        ? "bg-[#f48120]/5 border-[#f48120]/40 shadow-[0_12px_24px_-10px_rgba(244,129,32,0.18)]" 
+                        : "bg-white border-neutral-100/80 hover:shadow-[0_10px_20px_-8px_rgba(0,0,0,0.04)] hover:border-gray-200"
+                    )}
+                  >
+                    <button 
+                      onClick={() => handleItemClick(i)}
+                      className="flex items-center text-left gap-4 p-4 group cursor-pointer w-full focus:outline-none"
+                    >
+                      <div className={cn(
+                        "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-350",
+                        isOpen 
+                          ? "bg-[#f48120] text-white" 
+                          : "bg-[#f48120]/5 text-[#f48120] group-hover:bg-[#f48120] group-hover:text-white"
+                      )}>
+                        <div className="flex items-center justify-center w-full h-full">
+                          {usp.icon}
+                        </div>
+                      </div>
+                      <span className={cn(
+                        "text-[14px] font-bold transition-colors duration-300 flex-1",
+                        isOpen ? "text-[#f48120]" : "text-brand-navy group-hover:text-[#f48120]"
+                      )}>
+                        {usp.title}
+                      </span>
+                      {/* Chevron icon for mobile accordion indicator */}
+                      <div className="lg:hidden shrink-0 text-gray-400">
+                        <ChevronDown 
+                          size={16} 
+                          className={cn("transition-transform duration-300", isOpen && "rotate-180 text-[#f48120]")} 
+                        />
+                      </div>
+                    </button>
+
+                    {/* Accordion content for mobile */}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden lg:hidden"
+                        >
+                          <div className="p-4 pt-1 text-gray-600 text-[14px] leading-relaxed">
+                            <p className="mb-3 font-medium text-gray-600">
+                              {usp.description}
+                            </p>
+                            <img 
+                              src={usp.url} 
+                              alt={usp.title} 
+                              className="w-full h-48 object-cover rounded-lg shadow-sm"
+                            />
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <span className={cn(
-                    "text-[14px] font-bold transition-colors duration-300",
-                    activeImageIdx === i ? "text-[#f48120]" : "text-brand-navy group-hover:text-[#f48120]"
-                  )}>
-                    {usp.title}
-                  </span>
-                </button>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
  
@@ -139,7 +213,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand-sky/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -148,8 +222,8 @@ export default function AboutSection() {
               <div className="absolute inset-0 z-0">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.img 
-                    key={activeImageIdx}
-                    src={campusImages[activeImageIdx].url} 
+                    key={displayImageIdx}
+                    src={campusImages[displayImageIdx].url} 
                     alt="Pavna Campus Life" 
                     custom={direction}
                     variants={{
@@ -181,9 +255,9 @@ export default function AboutSection() {
               
               {/* Text Caption Content */}
               <div className="absolute bottom-8 left-12 right-12 text-white z-20">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2.5">{campusImages[activeImageIdx].title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2.5">{campusImages[displayImageIdx].title}</h3>
                 <p className="text-white/85 text-[13px] sm:text-[14px] leading-relaxed max-w-md font-medium">
-                  {campusImages[activeImageIdx].description}
+                  {campusImages[displayImageIdx].description}
                 </p>
               </div>
             </div>
