@@ -196,7 +196,7 @@ export default function AboutSection() {
                             <img 
                               src={usp.url} 
                               alt={usp.title} 
-                              className="w-full h-48 object-cover rounded-lg shadow-sm"
+                              className="w-full aspect-square object-cover rounded-lg shadow-sm block mt-2"
                             />
                           </div>
                         </motion.div>
