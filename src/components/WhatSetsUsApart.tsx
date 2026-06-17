@@ -171,7 +171,7 @@ export default function WhatSetsUsApart() {
               </div>
 
               {/* Fully Filled Box Image Area (Right) */}
-              <div className="lg:col-span-5 relative h-[240px] sm:h-[350px] lg:h-auto overflow-hidden bg-gray-50">
+              <div className="lg:col-span-5 relative aspect-square sm:aspect-auto sm:h-[350px] lg:h-auto overflow-hidden bg-gray-50">
                 <img
                   src={currentItem.image}
                   alt={currentItem.title}
