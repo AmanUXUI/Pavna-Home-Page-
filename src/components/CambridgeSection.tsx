@@ -113,7 +113,7 @@ export default function CambridgeSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   whileHover={{ y: -5, borderColor: '#f48120' }}
-                  className="relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-100/80 bg-white shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden"
+                  className="relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-100/80 bg-white shadow-sm hover:shadow-[0_12px_24px_-10px_rgba(244,129,32,0.18)] transition-all duration-500 group overflow-hidden"
                 >
                   {/* Floating Number Accent */}
                   <span className="absolute top-6 right-8 text-[32px] font-serif font-bold text-neutral-50 group-hover:text-brand-orange/5 transition-colors duration-500 select-none">
@@ -126,7 +126,7 @@ export default function CambridgeSection() {
                       <IconComponent size={20} className="stroke-[1.75]" />
                     </div>
 
-                    <h4 className="text-[17px] font-bold text-brand-navy mb-3">
+                    <h4 className="text-[17px] font-bold text-brand-navy mb-3 transition-colors duration-300 group-hover:text-[#f48120]">
                       {item.title}
                     </h4>
                     
