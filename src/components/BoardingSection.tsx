@@ -87,7 +87,7 @@ export default function BoardingSection() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-brand-navy mb-2 tracking-tight">
+                    <h3 className="text-xl font-bold text-brand-navy mb-2 tracking-tight transition-colors duration-300 group-hover:text-[#f48120]">
                       {feature.title}
                     </h3>
                     <p className="text-[#4B5563] text-[16px] leading-[24px] font-medium font-gill max-w-2xl">

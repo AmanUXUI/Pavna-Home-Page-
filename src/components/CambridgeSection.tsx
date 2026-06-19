@@ -88,7 +88,7 @@ export default function CambridgeSection() {
             </div>
 
             {/* Cambridge Curriculum Image */}
-            <div className="relative z-10 rounded-xl overflow-hidden aspect-[16/10] shadow-md border-2 border-white bg-white">
+            <div className="relative z-10 rounded-xl overflow-hidden aspect-[16/10] border-2 border-white bg-white">
               <img 
                 src="https://i.postimg.cc/QdLnrStr/Cooking-Classes.jpg" 
                 alt="Cambridge Curriculum" 
