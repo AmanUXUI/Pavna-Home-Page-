@@ -124,7 +124,7 @@ export default function AboutSection() {
           >
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 w-full">
               <div className="w-12 h-[2px] bg-brand-orange"></div>
-              <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange">About Pavna International School</span>
+              <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange text-center">ABOUT PIS</span>
               <div className="w-12 h-[2px] bg-brand-orange"></div>
             </div>
             
