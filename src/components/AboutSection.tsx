@@ -70,6 +70,19 @@ export default function AboutSection() {
     }
   ];
 
+  const highlights = [
+    {
+      title: "Our Vision",
+      description: "To enable every learner to become the best version of themselves - confident in their identity, grounded in values, and inspired to learn, lead, and live with purpose.\n\nWe envision Pavna Schools as vibrant ecosystems that blend intellect with humility, tradition with innovation, ambition with compassion, and individuality with community.",
+      image: "https://i.postimg.cc/sDX0mLp4/DSC05807-JPG.jpg"
+    },
+    {
+      title: "Our Mission",
+      description: "Our mission is to provide a nurturing and inspiring educational environment where every learner feels valued, respected, empowered to reach their full potential, and express themselves freely. We are committed to delivering holistic, experiential, inquiry-led and interdisciplinary learning that blends academic excellence with emotional, social, and ethical growth.\n\nThrough innovative teaching practices, dedicated faculty, and a unified curriculum, we aim to shape confident, compassionate, and curious learners who are prepared to thrive in a dynamic world.\n\nOur goal is to make quality education accessible and impactful creating institutions that are rooted in trust, inclusivity, and a deep sense of social responsibility",
+      image: "https://i.postimg.cc/W4cb9J5M/DSC06249-JPG.jpg"
+    }
+  ];
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
@@ -114,7 +127,7 @@ export default function AboutSection() {
   return (
     <section id="about-pavna" className="bg-[#FDFCFB] py-16 md:py-24 px-4 sm:px-8 md:px-16 border-t border-b border-gray-200 font-gill overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 lg:items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 lg:items-center mb-16 md:mb-24">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -262,6 +275,49 @@ export default function AboutSection() {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        <div className="flex flex-col gap-12 lg:gap-16">
+          {highlights.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.15 }}
+              className="relative group bg-white border border-gray-100 rounded-[8px] transition-all duration-500 overflow-hidden shadow-[0_12px_45px_-16px_rgba(32,26,91,0.04)] hover:shadow-[0_24px_60px_-16px_rgba(32,26,91,0.08)] hover:-translate-y-1 block p-6 sm:p-8 md:p-10"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                {/* Image Section */}
+                <div className={cn(
+                  "lg:col-span-5 relative rounded-[8px] overflow-hidden aspect-[16/11] lg:aspect-auto min-h-[260px] lg:h-[400px]",
+                  i % 2 === 1 ? "lg:order-last" : ""
+                )}>
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" 
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/20 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Content Section */}
+                <div className="lg:col-span-7 flex flex-col justify-center">
+                  <h3 className="text-2xl sm:text-[32px] leading-tight font-bold text-brand-navy tracking-tight mb-8">
+                    {item.title}
+                  </h3>
+
+                  {/* Description Paragraphs */}
+                  <div className="space-y-4 text-gray-550 text-[15px] sm:text-[16px] leading-[26px] font-normal mb-8 max-w-2xl">
+                    {item.description.split('\n\n').map((para, idx) => (
+                      <p key={idx} className="text-gray-600 font-normal">{para}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>
