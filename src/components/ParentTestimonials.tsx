@@ -76,7 +76,7 @@ export default function ParentTestimonials() {
   };
 
   return (
-    <section className="py-24 bg-[#FAF9F5] border-t border-b border-gray-200 relative overflow-hidden" id="parent-testimonials">
+    <section className="py-16 bg-[#FAF9F5] border-t border-b border-gray-200 relative overflow-hidden" id="parent-testimonials">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header Section */}
