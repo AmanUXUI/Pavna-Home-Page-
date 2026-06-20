@@ -64,7 +64,7 @@ export default function HeroSlider() {
                 transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                 className="text-[16px] leading-[24px] font-medium text-white/90 mb-8 font-gill max-w-xl"
               >
-                At Pavna International School, We Nurture Each Child's Unique Potential, Transforming Purposeful Growth Into A Legacy Of Lifelong Greatness And Experiences
+                At Pavna International School, we nurture each child's unique potential, transforming purposeful growth into a legacy of lifelong greatness and meaningful experiences.
               </motion.p>
               <motion.div 
                 initial={{ y: 20, opacity: 0 }}

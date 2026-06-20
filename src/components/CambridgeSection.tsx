@@ -30,7 +30,7 @@ export default function CambridgeSection() {
       <div className="max-w-7xl mx-auto">
         
         {/* Upper Level: Header Title Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center lg:items-start mb-16 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center lg:items-start mb-8 md:mb-16 text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function CambridgeSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 flex flex-col items-center lg:items-start"
           >
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-3 md:mb-4">
               <div className="w-12 h-[2px] bg-brand-orange"></div>
               <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange">GLOBAL STANDARD</span>
               <div className="w-12 h-[2px] bg-brand-orange"></div>
@@ -63,7 +63,7 @@ export default function CambridgeSection() {
         </div>
 
         {/* Lower Level: Why Cambridge Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-stretch mt-4 lg:mt-8">
           
           {/* Why Cambridge - Side Intro */}
           <motion.div 
@@ -71,18 +71,18 @@ export default function CambridgeSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-4 flex flex-col justify-between bg-neutral-50/50 hover:bg-neutral-50 rounded-2xl p-8 border border-neutral-100 transition-all duration-500 relative overflow-hidden group shadow-sm"
+            className="lg:col-span-4 flex flex-col justify-between bg-neutral-50/50 hover:bg-neutral-50 rounded-2xl p-5 sm:p-8 border border-neutral-100 transition-all duration-500 relative overflow-hidden group shadow-sm"
           >
             <div className="absolute -top-12 -right-12 w-40 h-40 bg-brand-orange/5 rounded-full blur-2xl group-hover:bg-brand-orange/10 transition-colors duration-500" />
             
-            <div className="relative z-10 mb-6">
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-orange bg-brand-orange/5 px-4 py-1.5 rounded-full inline-block mb-5 border border-brand-orange/10">
+            <div className="relative z-10 mb-4 sm:mb-6">
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-orange bg-brand-orange/5 px-4 py-1.5 rounded-full inline-block mb-4 sm:mb-5 border border-brand-orange/10">
                 Curriculum Insight
               </span>
-              <h3 className="text-3xl font-serif font-bold text-brand-navy mb-4 leading-tight">
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-brand-navy mb-3 sm:mb-4 leading-tight">
                 Why Cambridge?
               </h3>
-              <p className="text-[16px] text-neutral-600 leading-[24px] font-medium font-gill">
+              <p className="text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed sm:leading-[24px] font-medium font-gill">
                 The Cambridge curriculum helps students build a strong academic foundation while preparing them for future success through globally recognized learning standards.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function CambridgeSection() {
           </motion.div>
 
           {/* Core Advantages List */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {ADVANTAGES.map((item, index) => {
               const IconComponent = item.icon;
               const formattedIndex = String(index + 1).padStart(2, '0');
@@ -113,24 +113,24 @@ export default function CambridgeSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   whileHover={{ y: -5, borderColor: '#f48120' }}
-                  className="relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-100/80 bg-white shadow-sm hover:shadow-[0_12px_24px_-10px_rgba(244,129,32,0.18)] transition-all duration-500 group overflow-hidden"
+                  className="relative flex flex-col justify-between p-5 sm:p-8 rounded-2xl border border-neutral-100/80 bg-white shadow-sm hover:shadow-[0_12px_24px_-10px_rgba(244,129,32,0.18)] transition-all duration-500 group overflow-hidden"
                 >
                   {/* Floating Number Accent */}
-                  <span className="absolute top-6 right-8 text-[32px] font-serif font-bold text-neutral-50 group-hover:text-brand-orange/5 transition-colors duration-500 select-none">
+                  <span className="absolute top-4 sm:top-6 right-5 sm:right-8 text-2xl sm:text-[32px] font-serif font-bold text-neutral-50 group-hover:text-brand-orange/5 transition-colors duration-500 select-none">
                     {formattedIndex}
                   </span>
 
                   <div>
                     {/* Icon Container */}
-                    <div className="w-12 h-12 rounded-full bg-brand-orange/5 flex items-center justify-center text-brand-orange mb-6 transition-all duration-500 group-hover:bg-brand-orange group-hover:text-white">
-                      <IconComponent size={20} className="stroke-[1.75]" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-orange/5 flex items-center justify-center text-brand-orange mb-4 sm:mb-6 transition-all duration-500 group-hover:bg-brand-orange group-hover:text-white">
+                      <IconComponent size={18} className="stroke-[1.75]" />
                     </div>
 
-                    <h4 className="text-[17px] font-bold text-brand-navy mb-3 transition-colors duration-300 group-hover:text-[#f48120]">
+                    <h4 className="text-[16px] sm:text-[17px] font-bold text-brand-navy mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#f48120]">
                       {item.title}
                     </h4>
                     
-                    <p className="text-[16px] text-neutral-600 leading-[24px] font-medium font-gill">
+                    <p className="text-[14px] sm:text-[16px] text-neutral-600 leading-relaxed sm:leading-[24px] font-medium font-gill">
                       {item.desc}
                     </p>
                   </div>
