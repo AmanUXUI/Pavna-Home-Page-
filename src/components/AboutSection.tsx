@@ -23,7 +23,7 @@ export default function AboutSection() {
     {
       title: "Apple Distinguished School",
       description: "Recognized as a hub of innovation, leadership, and educational excellence through tech-enabled learning.",
-      url: "https://i.postimg.cc/mZqHLqNS/Apple-BG.jpg",
+      url: "https://i.postimg.cc/bJnC8qR0/DSC05703-JPG.jpg",
       icon: <Smartphone size={16} className="stroke-[2.5]" />
     },
     {
@@ -35,7 +35,7 @@ export default function AboutSection() {
     {
       title: "Multiple Career Pathways",
       description: "Keeps future academic and career opportunities open across disciplines.",
-      url: "https://i.postimg.cc/26WVNq6L/DSC08880-JPG.jpg",
+      url: "https://i.postimg.cc/1z2CL8D6/DSC08765-JPG.jpg",
       icon: <Target size={16} className="stroke-[2.5]" />
     },
     {

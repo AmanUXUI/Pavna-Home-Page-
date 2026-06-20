@@ -14,7 +14,7 @@ export default function FooterBanner() {
           {/* Mobile version */}
           <source 
             media="(max-width: 768px)" 
-            srcSet="https://i.postimg.cc/VLyRNdzG/Banner-Mobile.webp" 
+            srcSet="https://i.postimg.cc/pTLJs8GT/Banner-Mobile.jpg" 
           />
           {/* Desktop version */}
           <img 
