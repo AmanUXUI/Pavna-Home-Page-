@@ -1,0 +1,304 @@
+import { motion } from 'motion/react';
+import { 
+  Heart, 
+  Handshake, 
+  Users, 
+  ArrowUpRight,
+  Sprout,
+  Rocket,
+  Search,
+  Brain
+} from 'lucide-react';
+
+export default function AboutOverview() {
+  // Exact content lists for Vision and Mission (from OCR Page 1)
+  const visionParagraphs = [
+    "To enable every learner to become the best version of themselves – confident in their identity, grounded in values, and inspired to learn, lead, and live with purpose.",
+    "We envision Pavna Schools as vibrant ecosystems that blend intellect with humility, tradition with innovation, ambition with compassion, and individuality with community."
+  ];
+
+  const missionParagraphs = [
+    "Our mission is to provide a nurturing and inspiring educational environment where every learner feels valued, respected, empowered to reach their full potential, and express themselves freely. We are committed to delivering holistic, experiential, inquiry-led and interdisciplinary learning that blends academic excellence with emotional, social, and ethical growth.",
+    "Through innovative teaching practices, dedicated faculty, and a unified curriculum, we aim to shape confident, compassionate, and curious learners who are prepared to thrive in a dynamic world.",
+    "Our goal is to make quality education accessible and impactful creating institutions that are rooted in trust, inclusivity, and a deep sense of social responsibility."
+  ];
+
+  // Core Values content (derived exactly from OCR Page 2)
+  const coreValuesMainText = "Our goal is to make quality education accessible and impactful creating institutions that are rooted in trust, inclusivity, and a deep sense of social responsibility.";
+
+  const valuesItems = [
+    {
+      id: "01",
+      title: "Resilience",
+      description: "To Persevere Through Challenges With Courage, Adaptability And Grace.",
+      icon: <Sprout size={24} />
+    },
+    {
+      id: "02",
+      title: "Hustle",
+      description: "To Bring Passion, Initiative And Determination To Every Pursuit.",
+      icon: <Rocket size={24} />
+    },
+    {
+      id: "03",
+      title: "Compassion",
+      description: "To Act With Empathy And Kindness Toward All Living Beings.",
+      icon: <Users size={24} />
+    },
+    {
+      id: "04",
+      title: "Respect",
+      description: "To Honor Self, Others, Nature And The Truth That Binds Them All.",
+      icon: <Heart size={24} />
+    },
+    {
+      id: "05",
+      title: "Curiosity",
+      description: "To Question, Explore, And Seek Knowledge Beyond Boundaries.",
+      icon: <Search size={24} />
+    },
+    {
+      id: "06",
+      title: "Intellect",
+      description: "To Think Critically, Reason Deeply And Make Informed, Ethical Choices.",
+      icon: <Brain size={24} />
+    },
+    {
+      id: "07",
+      title: "Inclusivity",
+      description: "To Embrace Diversity, Respect Differences, Nurture Collaboration And Build Unity In Community.",
+      icon: <Handshake size={24} />
+    }
+  ];
+
+  return (
+    <div className="bg-[#FDFCFB] min-h-screen text-brand-black font-gill selection:bg-brand-orange/20 selection:text-brand-navy">
+      {/* 1. Header Hero Panel with Breadcrumbs */}
+      <section className="relative bg-brand-navy text-white overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
+        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
+          <img 
+            src="/src/assets/images/school_robotics_lab_1780940199532.png" 
+            alt="Robotics Lab Background" 
+            className="w-full h-full object-cover scale-105 filter blur-[2px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent" />
+        </div>
+        
+        {/* Decorative Grid Patterns */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Breadcrumb path */}
+          <div className="flex items-center gap-2 text-xs md:text-sm text-brand-gray mb-6">
+            <span className="hover:text-brand-orange transition-colors cursor-pointer" onClick={() => window.location.hash = ''}>Home</span>
+            <span className="text-white/30">/</span>
+            <span className="text-white/50">About</span>
+            <span className="text-white/30">/</span>
+            <span className="text-brand-orange font-bold">About PIS</span>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-4xl sm:text-[54px] font-sans font-bold leading-tight tracking-tight text-white mb-4">
+              About Pavna International School (PIS)
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light font-gill max-w-2xl">
+              Discover our visual legacy, pedagogical foundations, and deep-seated commitments to excellence and human values.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2. Our Philosophy Block (OCR Page 1) */}
+      <section className="py-16 md:py-24 border-b border-gray-100/85">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          {/* Section Subhead Accent */}
+          <div className="flex items-center justify-center gap-3 mb-6 w-full">
+            <div className="w-12 h-[2px] bg-brand-orange"></div>
+            <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange text-center">
+              Our Philosophy
+            </span>
+            <div className="w-12 h-[2px] bg-brand-orange"></div>
+          </div>
+
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-[42px] font-sans font-bold leading-tight tracking-tight text-brand-navy">
+              Where Growth Meets Tradition
+            </h2>
+          </div>
+
+          {/* Core Structure with Visual Balance */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Box Image */}
+            <div className="lg:col-span- così lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-brand-orange to-brand-navy rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square">
+                <img 
+                  src="https://i.postimg.cc/QN6ZRdLY/DSC09241-JPG.jpg" 
+                  alt="School Philosophy" 
+                  className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s]"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
+                
+
+              </div>
+            </div>
+
+            {/* Right Side Content Paragraphs */}
+            <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
+              <div className="text-[15px] sm:text-[16px] leading-[26px] text-neutral-600 font-normal space-y-6">
+                <p>
+                  At Pavna International School, we believe education should grow like a tree, reaching beyond the walls of a classroom. Our students are encouraged to explore, question, and learn through real experiences rather than just textbooks. This freedom to explore builds curiosity, confidence, and a genuine love for learning.
+                </p>
+
+                <p>
+                  This spirit of growth is rooted in a deeper purpose. Pavna International School was founded by the visionaries behind Teerthdham Mangalayatan, Hathras, and Chidayatan, Hastinapur, with a simple goal: to bring academic excellence and spiritual values together under one roof, especially for Jain students who wish to grow in both knowledge and faith.
+                </p>
+
+                <div className="p-6 bg-[#FAF9F5] border-l-4 border-brand-orange rounded-r-xl">
+                  <p className="text-[15px] sm:text-[16px] leading-[26px] text-brand-navy font-semibold mb-2">
+                    Visionary Leadership Legacy:
+                  </p>
+                  <p className="text-[15px] sm:text-[16px] leading-[26px] text-neutral-600">
+                    The school carries forward the vision of the late Shri Pavan Jain, now guided by his son, Mr. Swapnil Jain. Together with Teerthdham Mangalayatan, Pavna offers a calm, value-driven environment where children don't just study, they grow as individuals. It's this balance of strong academics and strong values that shapes well-rounded students, ready for life beyond school.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Vision & Mission Section (OCR Page 1) */}
+      <section className="py-16 md:py-24 bg-[#FAF9F5]/70 border-b border-gray-100/85 relative overflow-hidden">
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            
+            {/* Vision Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl border border-neutral-100 bg-white shadow-sm hover:shadow-[0_12px_32px_-12px_rgba(32,26,91,0.1)] transition-all duration-500 group overflow-hidden"
+            >
+              {/* Floating Absolute Watermark Content */}
+              <span className="absolute top-4 right-8 text-5xl sm:text-[72px] font-sans font-bold text-neutral-100/60 group-hover:text-brand-orange/5 transition-colors duration-500 select-none">
+                VISION
+              </span>
+
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-sans font-bold text-brand-navy mb-6 group-hover:text-brand-orange transition-colors">
+                  Our Vision
+                </h3>
+                
+                <div className="space-y-4 text-neutral-600 font-normal text-[15px] sm:text-[16px] leading-[26px]">
+                  {visionParagraphs.map((para, idx) => (
+                    <p key={idx}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Decorative side bar highlight */}
+              <div className="absolute top-0 left-0 w-[4px] h-full bg-brand-orange transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
+            </motion.div>
+
+            {/* Mission Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl border border-neutral-100 bg-white shadow-sm hover:shadow-[0_12px_32px_-12px_rgba(32,26,91,0.1)] transition-all duration-500 group overflow-hidden"
+            >
+              {/* Floating Absolute Watermark Content */}
+              <span className="absolute top-4 right-8 text-5xl sm:text-[72px] font-sans font-bold text-neutral-100/60 group-hover:text-brand-orange/5 transition-colors duration-500 select-none">
+                MISSION
+              </span>
+
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-sans font-bold text-brand-navy mb-6 group-hover:text-brand-orange transition-colors">
+                  Our Mission
+                </h3>
+                
+                <div className="space-y-4 text-neutral-600 font-normal text-[15px] sm:text-[16px] leading-[26px]">
+                  {missionParagraphs.map((para, idx) => (
+                    <p key={idx}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Decorative side bar highlight */}
+              <div className="absolute top-0 left-0 w-[4px] h-full bg-brand-orange transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Core Values Section (Redesigned per Screenshot) */}
+      <section className="py-16 md:py-24 bg-white border-b border-neutral-100">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          {/* Centered Header with decorative elements styling matching section 2 */}
+          <div className="flex items-center justify-center gap-3 mb-6 w-full">
+            <div className="w-12 h-[2px] bg-brand-orange"></div>
+            <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange text-center">
+              THE PAVNA ETHOS
+            </span>
+            <div className="w-12 h-[2px] bg-brand-orange"></div>
+          </div>
+
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-[42px] font-sans font-bold leading-tight tracking-tight text-brand-navy mb-4">
+              Core Values
+            </h2>
+            <p className="text-neutral-500 font-normal text-[15px] sm:text-[16.5px] leading-relaxed max-w-2xl mx-auto">
+              Seven Timeless Values Shaping The Character Of Our Learners And The Culture Of Our Schools.
+            </p>
+          </div>
+
+          {/* Grid layout exactly matching the minimalist format in the screenshot */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 sm:gap-y-16">
+            {valuesItems.map((value) => (
+              <div 
+                key={value.id}
+                className="flex items-start gap-5 group"
+              >
+                {/* Circular background icon badge styled per user request */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#f48120]/5 flex items-center justify-center text-[#f48120] shrink-0 transition-all duration-300 group-hover:bg-[#f48120] group-hover:text-white group-hover:scale-105">
+                  {value.icon}
+                </div>
+                
+                <div className="flex-1">
+                  <h4 className="text-[17px] sm:text-[18px] font-bold text-brand-navy mb-1.5 transition-colors duration-300 group-hover:text-brand-orange">
+                    {value.title}
+                  </h4>
+                  <p className="text-[14px] sm:text-[14.5px] text-neutral-600 leading-[23px] font-normal">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    </div>
+  );
+}

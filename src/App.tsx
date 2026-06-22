@@ -1,8 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSlider from './components/HeroSlider';
 import LeadershipSlider from './components/LeadershipSlider';
@@ -17,30 +13,54 @@ import FAQSection from './components/FAQSection';
 import DistinguishedGuests from './components/DistinguishedGuests';
 import LifeAtPavnaGallery from './components/LifeAtPavnaGallery';
 import FooterBanner from './components/FooterBanner';
-import CTASection from './components/CTASection';
 import Footer from './components/Footer';
+import AboutOverview from './components/AboutOverview';
 
 export default function App() {
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+      // Immediately scroll to top when changing routes
+      window.scrollTo(0, 0);
+    };
+    
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Check initial hash state
+    handleHashChange();
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const isAboutOverview = currentHash === '#about-overview';
+
   return (
     <div className="relative min-h-screen">
       <Navbar />
       <main>
-        <HeroSlider />
-        <CambridgeSection />
-        <AboutSection />
-        <WhatSetsUsApart />
-        <ImageGallery />
-        <BoardingSection />
-        <PavnaPromise />
-        <LeadershipSlider />
-        <LifeAtPavnaGallery />
-        <ParentTestimonials />
-        <DistinguishedGuests />
-        <FooterBanner />
-        <FAQSection />
-        <CTASection />
-        <Footer />
+        {isAboutOverview ? (
+          <AboutOverview />
+        ) : (
+          <>
+            <HeroSlider />
+            <CambridgeSection />
+            <AboutSection />
+            <WhatSetsUsApart />
+            <ImageGallery />
+            <BoardingSection />
+            <PavnaPromise />
+            <LeadershipSlider />
+            <LifeAtPavnaGallery />
+            <ParentTestimonials />
+            <DistinguishedGuests />
+            <FooterBanner />
+            <FAQSection />
+          </>
+        )}
       </main>
+      <Footer />
     </div>
   );
 }
