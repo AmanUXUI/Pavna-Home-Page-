@@ -78,7 +78,7 @@ const PrincipalsMessage: FC = () => {
               <div className="flex items-center gap-3">
                 <div className="w-12 h-[2px] bg-brand-orange"></div>
                 <span className="text-[11px] leading-none tracking-[2px] uppercase font-bold text-brand-orange">
-                  From the Desk of Ms. Aarti Nigam
+                  A NOTE FROM OUR PRINCIPAL
                 </span>
                 <div className="w-12 h-[2px] bg-brand-orange"></div>
               </div>
@@ -87,7 +87,7 @@ const PrincipalsMessage: FC = () => {
                 Message from the Principal
               </h2>
 
-              <div className="space-y-6 text-neutral-600 text-[15px] sm:text-[16.5px] leading-relaxed font-light">
+              <div className="space-y-6 text-[#4B5563] text-[16px] leading-[24px] font-medium font-gill">
                 <p>
                   Welcome to Pavna International School, where we dedicate ourselves to nurturing each child’s talent. Our collaborative environment at PIS, supported by students, parents and staff, is designed to foster excellence. We integrate 21st-century educational practices with experiential learning, focusing on developing diverse skills from critical thinking to technical proficiency, preparing well-rounded students.
                 </p>

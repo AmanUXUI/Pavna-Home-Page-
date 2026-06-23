@@ -78,7 +78,7 @@ const ChairmansMessage: FC = () => {
               <div className="flex items-center gap-3">
                 <div className="w-12 h-[2px] bg-brand-orange"></div>
                 <span className="text-[11px] leading-none tracking-[2px] uppercase font-bold text-brand-orange">
-                  A WELCOME REFLECTION
+                  A NOTE FROM OUR CHAIRMAN
                 </span>
                 <div className="w-12 h-[2px] bg-brand-orange"></div>
               </div>
@@ -87,7 +87,7 @@ const ChairmansMessage: FC = () => {
                 Message from the Chairman
               </h2>
 
-              <div className="space-y-6 text-neutral-600 text-[15px] sm:text-[16.5px] leading-relaxed font-light">
+              <div className="space-y-6 text-[#4B5563] text-[16px] leading-[24px] font-medium font-gill">
                 <p>
                   Pavna international School represents our commitment to making world-class education accessible to every aspiring student. With our dynamic and adaptable Cambridge Curriculum, our goal is to develop students who are not just learners but innovators, capable of applying their knowledge in real-world scenarios. We strive to instil in them a deep understanding of our cultural values while exposing them to global perspectives, preparing them to thrive as global citizens.
                 </p>
