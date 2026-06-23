@@ -44,7 +44,7 @@ export default function CambridgeSection() {
               <div className="w-12 h-[2px] bg-brand-orange"></div>
             </div>
             
-            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] leading-[34px] sm:leading-[44px] md:leading-[52px] tracking-[-1.2px] font-bold text-brand-navy font-serif text-center lg:text-left">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[42px] leading-[34px] sm:leading-[44px] md:leading-[50px] tracking-[-1.2px] font-bold text-brand-navy font-serif text-center lg:text-left">
               Cambridge International <span className="text-brand-orange">Education</span>
             </h2>
           </motion.div>

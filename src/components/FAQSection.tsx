@@ -69,7 +69,7 @@ export default function FAQSection() {
             <div className="w-12 h-[2px] bg-brand-orange"></div>
           </div>
           <h2 
-            className="text-3xl sm:text-4xl md:text-[42px] font-bold text-brand-navy tracking-tight"
+            className="text-3xl sm:text-4xl md:text-[42px] lg:text-[42px] md:leading-[50px] font-bold text-brand-navy tracking-tight"
             id="faq-title"
           >
             Frequently Asked Questions

@@ -97,7 +97,7 @@ export default function ParentTestimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold font-gill text-brand-navy tracking-tight mb-5"
+            className="text-3xl md:text-[42px] lg:text-[42px] md:leading-[50px] lg:leading-[50px] font-bold font-gill text-brand-navy tracking-tight mb-5"
           >
             Parent Testimonials
           </motion.h2>

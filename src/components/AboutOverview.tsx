@@ -103,7 +103,7 @@ export default function AboutOverview() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl sm:text-[54px] font-sans font-bold leading-tight tracking-tight text-white mb-4">
+            <h1 className="text-4xl md:text-[52px] lg:text-[52px] font-sans font-bold leading-tight md:leading-[58px] lg:leading-[58px] tracking-tight text-white mb-4">
               About Pavna International School (PIS)
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light font-gill max-w-2xl">
@@ -127,7 +127,7 @@ export default function AboutOverview() {
           </div>
 
           <div className="text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-[42px] font-sans font-bold leading-tight tracking-tight text-brand-navy">
+            <h2 className="text-3xl md:text-[42px] font-sans font-bold md:leading-[50px] tracking-tight text-brand-navy">
               Where Growth Meets Tradition
             </h2>
           </div>
@@ -265,7 +265,7 @@ export default function AboutOverview() {
           </div>
 
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-[42px] font-sans font-bold leading-tight tracking-tight text-brand-navy mb-4">
+            <h2 className="text-3xl md:text-[42px] font-sans font-bold md:leading-[50px] tracking-tight text-brand-navy mb-4">
               Core Values
             </h2>
             <p className="text-neutral-500 font-normal text-[15px] sm:text-[16.5px] leading-relaxed max-w-2xl mx-auto">

@@ -117,7 +117,7 @@ export default function GlobalLearning() {
               What Sets Us Apart
             </span>
           </div>
-          <h2 className="text-2xl sm:text-[48px] sm:leading-[56px] tracking-[-1.2px] font-bold text-brand-navy">
+          <h2 className="text-2xl sm:text-3xl md:text-[42px] lg:text-[42px] md:leading-[50px] tracking-[-1.2px] font-bold text-brand-navy">
             What Sets Pavna International Apart
           </h2>
           <p className="text-gray-600 text-base sm:text-lg font-medium mt-4 max-w-2xl mx-auto leading-relaxed">

@@ -1,0 +1,126 @@
+import { FC } from 'react';
+import { Quote, ArrowRight, BookOpen, Star, ShieldCheck, Award } from 'lucide-react';
+import { motion } from 'motion/react';
+
+const ChairmansMessage: FC = () => {
+  return (
+    <div className="bg-[#FDFCFB] min-h-screen text-brand-black font-gill selection:bg-brand-orange/20 selection:text-brand-navy">
+      
+      {/* 1. Header Hero Panel with Breadcrumbs (consistent with AboutOverview) */}
+      <section className="relative bg-brand-navy text-white overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5">
+        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
+          <img 
+            src="/src/assets/images/school_robotics_lab_1780940199532.png" 
+            alt="Robotics Lab Background" 
+            className="w-full h-full object-cover scale-105 filter blur-[2px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent" />
+        </div>
+        
+        {/* Decorative Grid Patterns */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Breadcrumb path - Styled exactly consistent with AboutOverview */}
+          <div className="flex items-center gap-2 text-xs md:text-sm text-brand-gray mb-6">
+            <span className="hover:text-brand-orange transition-colors cursor-pointer" onClick={() => window.location.hash = ''}>Home</span>
+            <span className="text-white/30">/</span>
+            <span className="text-white/50">Leadership</span>
+            <span className="text-white/30">/</span>
+            <span className="text-brand-orange font-bold">Chairman's Message</span>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-4xl md:text-[52px] lg:text-[52px] font-sans font-bold leading-tight md:leading-[58px] lg:leading-[58px] tracking-tight text-white mb-4">
+              Chairman's Message
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light font-gill max-w-2xl">
+              Inspiring minds, building values, and nurturing global leaders who remain firmly anchored in character.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2. Main content section */}
+      <section className="py-20 md:py-28 bg-white border-b border-neutral-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Visual Portrait Card Column */}
+            <div className="lg:col-span-5 relative group">
+              
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl bg-white border border-neutral-100">
+                <img 
+                  src="https://i.postimg.cc/J0twLXm8/Guest-Image-2.png" 
+                  alt="Mr. Swapnil Jain, Chairman" 
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              {/* Highlighting Quote bubble */}
+              <div className="mt-8 bg-[#FDFCFB] border-l-4 border-brand-orange p-6 rounded-r-2xl shadow-sm">
+                <Quote className="text-brand-orange mb-3" size={32} fill="currentColor" />
+                <p className="italic text-neutral-700 text-sm md:text-base leading-relaxed font-medium">
+                  "Our goal is to develop students who are not just learners but innovators, capable of applying their knowledge in real-world scenarios."
+                </p>
+              </div>
+            </div>
+
+            {/* Message Text Column */}
+            <div className="lg:col-span-7 flex flex-col gap-8">
+              
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-[2px] bg-brand-orange"></div>
+                <span className="text-[11px] leading-none tracking-[2px] uppercase font-bold text-brand-orange">
+                  A WELCOME REFLECTION
+                </span>
+                <div className="w-12 h-[2px] bg-brand-orange"></div>
+              </div>
+
+              <h2 className="text-3xl sm:text-[42px] md:text-[42px] lg:text-[42px] font-serif font-bold text-brand-navy leading-tight md:leading-[50px] lg:leading-[50px] tracking-tight">
+                Message from the Chairman
+              </h2>
+
+              <div className="space-y-6 text-neutral-600 text-[15px] sm:text-[16.5px] leading-relaxed font-light">
+                <p>
+                  Pavna international School represents our commitment to making world-class education accessible to every aspiring student. With our dynamic and adaptable Cambridge Curriculum, our goal is to develop students who are not just learners but innovators, capable of applying their knowledge in real-world scenarios. We strive to instil in them a deep understanding of our cultural values while exposing them to global perspectives, preparing them to thrive as global citizens.
+                </p>
+                <p>
+                  In an ever-evolving world, our students are groomed to be leaders of change, not just adapting to it but driving it forward. They will be the catalysts who inspire and empower others to embrace and lead change, shaping a brighter future for themselves and the world around them.
+                </p>
+              </div>
+
+              {/* Signatures & Controls */}
+              <div className="pt-10 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-8 mt-4">
+                <div>
+                  <p className="text-xs text-neutral-400 uppercase tracking-widest font-semibold mb-2">Warmest Regards,</p>
+                  <h4 className="font-serif text-2xl font-bold text-brand-navy mb-1">Mr. Swapnil Jain</h4>
+                  <p className="text-[12px] text-brand-orange uppercase font-bold tracking-wider">Chairman, Pavna Group</p>
+                </div>
+
+                <button 
+                  onClick={() => window.location.hash = ''} 
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 self-start sm:self-center cursor-pointer"
+                >
+                  Return to Homepage
+                  <ArrowRight size={15} />
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default ChairmansMessage;

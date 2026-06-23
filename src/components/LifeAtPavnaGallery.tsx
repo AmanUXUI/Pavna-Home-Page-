@@ -63,7 +63,7 @@ export default function LifeAtPavnaGallery() {
           </span>
           <div className="w-12 h-[2px] bg-brand-orange"></div>
         </div>
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-brand-navy tracking-tight leading-tight mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-[42px] lg:text-[42px] font-bold text-brand-navy tracking-tight leading-tight md:leading-[50px] lg:leading-[50px] mb-4">
           Campus Gallery
         </h2>
 

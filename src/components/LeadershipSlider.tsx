@@ -74,7 +74,7 @@ export default function LeadershipSlider() {
         {/* Left Side: Headline and Nav */}
         <div className="lg:col-span-12 xl:col-span-5 text-white">
           <span className="text-xs uppercase tracking-widest font-bold text-[#ffca05] mb-4 block">Leadership & Vision</span>
-          <h2 className="text-[26px] sm:text-[34px] leading-[1.1] font-bold mb-4">
+          <h2 className="text-[26px] sm:text-[34px] md:text-[42px] lg:text-[42px] leading-tight md:leading-[50px] font-bold mb-4">
             Discover the inspiring stories <br className="hidden md:block" />
             <span className="text-white">& honest experiences</span> <br className="hidden md:block" />
             shared by our leaders.

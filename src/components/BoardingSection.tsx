@@ -66,7 +66,7 @@ export default function BoardingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-[28px] sm:text-[36px] md:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[56px] font-bold text-brand-navy mb-8 md:mb-14 tracking-tight text-center lg:text-left"
+              className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[42px] leading-[34px] sm:leading-[44px] md:leading-[50px] font-bold text-brand-navy mb-8 md:mb-14 tracking-tight text-center lg:text-left"
             >
               A Home Away <br className="hidden md:block" /> From Home
             </motion.h2>

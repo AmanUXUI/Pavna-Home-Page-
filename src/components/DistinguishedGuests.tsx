@@ -270,7 +270,7 @@ export default function DistinguishedGuests() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[32px] md:text-[48px] font-bold text-brand-navy mb-4 tracking-tight"
+            className="text-[32px] md:text-[42px] lg:text-[42px] md:leading-[50px] lg:leading-[50px] font-bold text-brand-navy mb-4 tracking-tight"
           >
             Distinguished Guests At Pavna School Legacy
           </motion.h2>

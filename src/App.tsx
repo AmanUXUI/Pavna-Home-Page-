@@ -15,6 +15,7 @@ import LifeAtPavnaGallery from './components/LifeAtPavnaGallery';
 import FooterBanner from './components/FooterBanner';
 import Footer from './components/Footer';
 import AboutOverview from './components/AboutOverview';
+import ChairmansMessage from './components/ChairmansMessage';
 
 export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -35,6 +36,7 @@ export default function App() {
   }, []);
 
   const isAboutOverview = currentHash === '#about-overview';
+  const isChairmansMessage = currentHash === '#chairmans-message';
 
   return (
     <div className="relative min-h-screen">
@@ -42,6 +44,8 @@ export default function App() {
       <main>
         {isAboutOverview ? (
           <AboutOverview />
+        ) : isChairmansMessage ? (
+          <ChairmansMessage />
         ) : (
           <>
             <HeroSlider />

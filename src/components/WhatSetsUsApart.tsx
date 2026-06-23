@@ -96,7 +96,7 @@ export default function WhatSetsUsApart() {
             </span>
             <div className="w-12 h-[2px] bg-brand-orange"></div>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-[48px] md:leading-[56px] font-bold text-brand-navy tracking-tight max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-4xl md:text-[42px] lg:text-[42px] md:leading-[50px] font-bold text-brand-navy tracking-tight max-w-4xl mx-auto">
             What Sets Pavna International Apart
           </h2>
           <p className="text-gray-550 text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mt-4">

@@ -35,7 +35,7 @@ export default function PavnaPromise() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[30px] sm:text-[36px] md:text-[54px] leading-[1.1] font-bold text-white mb-5 md:mb-8 tracking-tight"
+              className="text-[30px] sm:text-[36px] md:text-[42px] lg:text-[42px] leading-[1.1] md:leading-[50px] lg:leading-[50px] font-bold text-white mb-5 md:mb-8 tracking-tight"
             >
               Pavna <span className="text-brand-yellow">Promise</span>
             </motion.h2>
