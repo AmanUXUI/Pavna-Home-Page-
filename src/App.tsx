@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import AboutOverview from './components/AboutOverview';
 import ChairmansMessage from './components/ChairmansMessage';
 import PrincipalsMessage from './components/PrincipalsMessage';
+import EarlyYears from './components/EarlyYears';
 
 export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -39,6 +40,7 @@ export default function App() {
   const isAboutOverview = currentHash === '#about-overview';
   const isChairmansMessage = currentHash === '#chairmans-message';
   const isPrincipalsMessage = currentHash === '#principals-message';
+  const isEarlyYears = currentHash === '#early-years';
 
   return (
     <div className="relative min-h-screen">
@@ -50,6 +52,8 @@ export default function App() {
           <ChairmansMessage />
         ) : isPrincipalsMessage ? (
           <PrincipalsMessage />
+        ) : isEarlyYears ? (
+          <EarlyYears />
         ) : (
           <>
             <HeroSlider />

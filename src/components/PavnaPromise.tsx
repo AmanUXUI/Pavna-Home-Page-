@@ -47,7 +47,7 @@ export default function PavnaPromise() {
               transition={{ delay: 0.2 }}
               className="mb-8 md:mb-10"
             >
-              <p className="text-white/90 text-[14px] sm:text-[17px] leading-relaxed max-w-2xl font-light">
+              <p className="text-white/90 text-[14px] sm:text-[17px] leading-[24px] max-w-2xl font-light">
                 At Pavna, education is a journey of becoming - of discovering the best version of oneself while learning to live with purpose and joy. We aspire to build global citizens who are rooted in values, are lifelong learners, and unafraid to <span className="text-brand-yellow font-medium">#BeYourself</span>
               </p>
             </motion.div>
