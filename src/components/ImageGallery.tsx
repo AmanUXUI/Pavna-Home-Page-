@@ -149,7 +149,7 @@ export default function ImageGallery() {
                   <p className="text-white/70 text-xs sm:text-sm md:text-lg mb-4 md:mb-8 max-w-xs leading-relaxed font-semibold">
                     {stage.description}
                   </p>
-                  <a href="#" className="inline-flex items-center gap-2 text-yellow-400 text-[10px] md:text-[11px] font-bold uppercase tracking-[2px] hover:text-white transition-colors pointer-events-auto">
+                  <a href={`#${stage.id}`} className="inline-flex items-center gap-2 text-yellow-400 text-[10px] md:text-[11px] font-bold uppercase tracking-[2px] hover:text-white transition-colors pointer-events-auto">
                     {stage.link}
                   </a>
                 </div>

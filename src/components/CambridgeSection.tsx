@@ -79,7 +79,7 @@ export default function CambridgeSection() {
               <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-orange bg-brand-orange/5 px-4 py-1.5 rounded-full inline-block mb-4 sm:mb-5 border border-brand-orange/10">
                 Curriculum Insight
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-brand-navy mb-3 sm:mb-4 leading-tight">
+              <h3 className="text-[36px] font-serif font-bold text-brand-navy mb-3 sm:mb-4 leading-tight">
                 Why Cambridge?
               </h3>
               <p className="text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed sm:leading-[24px] font-medium font-gill">

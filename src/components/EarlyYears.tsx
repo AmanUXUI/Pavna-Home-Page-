@@ -68,13 +68,9 @@ const EarlyYears: FC = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-[2px] bg-brand-orange"></div>
-              <span className="text-[11px] leading-none tracking-[2px] uppercase font-bold text-brand-orange">
-                Early Childhood Development
-              </span>
-              <div className="w-12 h-[2px] bg-brand-orange"></div>
-            </div>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-brand-navy mb-6">
+              Early Childhood Development
+            </h2>
             
             <p className="text-[#4B5563] text-[16px] leading-[24px] font-medium font-gill mb-6">
               Early Childhood development is essential for a child's future success, and there are several factors that can contribute to his or her growth and development. Preschool learning activities play a key role in this process. Here are five key elements that can help to boost early childhood development:
