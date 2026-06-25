@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const PrincipalsMessage: FC = () => {
@@ -49,16 +49,16 @@ const PrincipalsMessage: FC = () => {
       {/* 2. Main content section */}
       <section className="py-20 md:py-28 bg-white border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 lg:items-stretch items-start">
             
             {/* Visual Portrait Card Column */}
-            <div className="lg:col-span-12 xl:lg:col-span-5 lg:col-span-5 relative group">
+            <div className="lg:col-span-5 relative group flex flex-col h-full">
               
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl bg-white border border-neutral-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-neutral-100 h-full min-h-[450px] lg:min-h-0 flex-1">
                 <img 
                   src="https://i.postimg.cc/vBDFRKW9/Guest-Image-4.png" 
                   alt="Ms. Aarti Nigam, Principal" 
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -86,8 +86,15 @@ const PrincipalsMessage: FC = () => {
                 <p>
                   Our Cambridge Curriculum emphasizes not just academic excellence but also essential life skills, ensuring holistic development. We balance rigorous academics with enriching co-curricular activities, including sports and arts, to cultivate varied talents. Our “Be yourself” philosophy celebrates individuality, encouraging students to explore their unique talents and think independently. Embracing one’s true self is at the heart of the PIS experience.
                 </p>
-                <p>
-                Our “Be yourself” philosophy celebrates individuality, encouraging students to explore their unique talents and think independently
+              </div>
+
+              {/* Highlighted key philosophy callout */}
+              <div className="p-6 bg-[#FAF9F5] rounded-2xl border border-neutral-200/60 shadow-sm flex items-start gap-4 hover:border-brand-orange/30 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-brand-orange/5 text-brand-orange flex items-center justify-center shrink-0">
+                  <Award size={18} className="stroke-[1.75]" />
+                </div>
+                <p className="text-brand-navy text-[16px] font-serif font-bold italic leading-relaxed mb-0">
+                  Our “Be yourself” philosophy celebrates individuality, encouraging students to explore their unique talents and think independently
                 </p>
               </div>
 

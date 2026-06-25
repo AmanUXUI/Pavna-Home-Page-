@@ -89,7 +89,7 @@ const CampusLife: FC = () => {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-lg border border-neutral-100 group">
                 <img 
-                  src="https://i.postimg.cc/sDX0mLp4/DSC05807-JPG.jpg" 
+                  src="https://i.postimg.cc/CKhrx74n/DSC08751-JPG.jpg" 
                   alt="Campus Environment" 
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
@@ -102,12 +102,24 @@ const CampusLife: FC = () => {
         </div>
       </section>
 
-      {/* 3. Academic Infrastructure & Administration Block */}
+      {/* 3a. Academic Infrastructure */}
       <section className="py-16 md:py-24 bg-[#FAF9F6] border-t border-b border-gray-100/85">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Left side: Academic Infrastructure */}
+            {/* Left side: Image */}
+            <div className="lg:col-span-6 relative group">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white border border-neutral-100 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full min-h-[300px] lg:min-h-[420px]">
+                <img 
+                  src="https://i.postimg.cc/sgp9CzPy/DSC06065-JPG.jpg" 
+                  alt="World-Class Academic Infrastructure" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* Right side: Content */}
             <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-6">
@@ -115,7 +127,6 @@ const CampusLife: FC = () => {
                   <span className="text-[11px] leading-none tracking-[2px] uppercase font-bold text-brand-orange">
                     EXPLORE OUR WORLD-CLASS ACADEMIC INFRASTRUCTURE
                   </span>
-                  <div className="w-12 h-[2px] bg-brand-orange"></div>
                 </div>
                 
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-brand-navy leading-tight tracking-tight mb-6">
@@ -151,18 +162,26 @@ const CampusLife: FC = () => {
               </div>
             </div>
 
-            {/* Right side: Administration Block */}
-            <div className="lg:col-span-6 bg-white p-8 md:p-10 rounded-3xl border border-neutral-200/60 shadow-md flex flex-col justify-between">
+          </div>
+        </div>
+      </section>
+
+      {/* 3b. Administration Block */}
+      <section className="py-16 md:py-24 bg-white border-b border-gray-100/85">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left side: Content */}
+            <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-[2px] bg-brand-orange"></div>
                   <span className="text-[11px] leading-none tracking-[2px] uppercase font-bold text-brand-orange">
                     THE HEART OF CAMPUS OPERATIONS
                   </span>
-                  <div className="w-12 h-[2px] bg-brand-orange"></div>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-brand-navy leading-tight tracking-tight mb-6">
+                <h3 className="text-3xl sm:text-4xl font-serif font-bold text-brand-navy leading-tight tracking-tight mb-6">
                   Administration Block
                 </h3>
 
@@ -172,7 +191,7 @@ const CampusLife: FC = () => {
               </div>
 
               {/* Exact extracted areas from the text */}
-              <div className="border-t border-neutral-100 pt-6 grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { name: "Student Support", icon: Heart },
                   { name: "Academic Coordination", icon: GraduationCap },
@@ -181,12 +200,29 @@ const CampusLife: FC = () => {
                 ].map((item, idx) => {
                   const IconComp = item.icon;
                   return (
-                    <div key={idx} className="flex items-center gap-2.5 text-[14px] text-brand-navy font-bold">
-                      <IconComp size={16} className="text-brand-orange shrink-0" />
-                      <span>{item.name}</span>
+                    <div 
+                      key={idx} 
+                      className="flex items-center gap-3 bg-[#FAF9F6] py-4 px-5 rounded-xl border border-neutral-200/50 shadow-sm transition-all duration-300 hover:border-brand-orange hover:shadow-md"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-brand-orange/5 text-brand-orange flex items-center justify-center shrink-0">
+                        <IconComp size={16} />
+                      </div>
+                      <span className="text-[14px] font-bold text-brand-navy leading-tight">{item.name}</span>
                     </div>
                   );
                 })}
+              </div>
+            </div>
+
+            {/* Right side: Image */}
+            <div className="lg:col-span-6 relative group">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white border border-neutral-100 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full min-h-[300px] lg:min-h-[420px]">
+                <img 
+                  src="https://i.postimg.cc/g08771jG/DSC06279-JPG.jpg" 
+                  alt="Administration Block" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
 

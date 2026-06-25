@@ -25,10 +25,69 @@ const getItemDescription = (name: string): string => {
   return descriptions[name] || "Learn more about our programs";
 };
 
+const itemMediaMap: Record<string, { image: string; title: string; subtitle: string }> = {
+  // Academics
+  "Early Years (Age 3 To 5 Years)": {
+    image: "https://i.postimg.cc/G27wmxSp/Early-Years.jpg",
+    title: "Early Years",
+    subtitle: "Play-based inquiry & foundation"
+  },
+  "Primary (Age 5 To 11 Years)": {
+    image: "https://i.postimg.cc/j5g0S4k5/Primary.jpg",
+    title: "Primary Years",
+    subtitle: "Core skills & creative learning"
+  },
+  "Lower Secondary (Age 11 to 14 Years)": {
+    image: "https://i.postimg.cc/XJHSYkDq/Low-Secondary.jpg",
+    title: "Lower Secondary",
+    subtitle: "Structured disciplines & active discovery"
+  },
+  "Upper Secondary - IGCSE (Age 14 To 16 Years)": {
+    image: "https://i.postimg.cc/mDXfgy6L/Upper-Secondary.jpg",
+    title: "Upper Secondary",
+    subtitle: "Cambridge qualifications for 14-16"
+  },
+  "Advance - AS & A Level (Age 16 To 18 Years)": {
+    image: "https://i.postimg.cc/QtxZDymR/Advance.jpg",
+    title: "Advance Years",
+    subtitle: "Pre-university international standard"
+  },
+  
+  // Publications
+  "Blog": {
+    image: "https://i.postimg.cc/d3MHbwTd/DSC05685-JPG.jpg",
+    title: "Our Blog",
+    subtitle: "Insights & stories from campus"
+  },
+  "Newsletter Archive": {
+    image: "https://i.postimg.cc/kgM13jDj/DSC05807-JPG.jpg",
+    title: "Weekly Chronicles",
+    subtitle: "Celebrations & updates"
+  },
+
+  // Contact Us
+  "Let's Talk": {
+    image: "https://i.postimg.cc/13RChW47/DSC08428-JPG.jpg",
+    title: "Let's Talk",
+    subtitle: "Connect directly with advisors"
+  },
+  "Careers": {
+    image: "https://i.postimg.cc/MpZP2sXP/DSC08748-JPG.jpg",
+    title: "Careers",
+    subtitle: "Grow your teaching career with us"
+  },
+  "Enquire Now": {
+    image: "https://i.postimg.cc/qMqw1NY4/DSC08559-JPG.jpg",
+    title: "Enquire Now",
+    subtitle: "Start your admissions journey"
+  }
+};
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -43,7 +102,10 @@ export default function Navbar() {
         isScrolled ? "bg-white shadow-sm py-3" : "bg-white py-4"
       )}
       id="navbar"
-      onMouseLeave={() => setActiveDropdown(null)}
+      onMouseLeave={() => {
+        setActiveDropdown(null);
+        setHoveredItem(null);
+      }}
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         {/* Logo */}
@@ -62,7 +124,15 @@ export default function Navbar() {
             <div 
               key={link.name} 
               className="relative group h-full flex items-center"
-              onMouseEnter={() => link.hasDropdown ? setActiveDropdown(link.name) : setActiveDropdown(null)}
+              onMouseEnter={() => {
+                if (link.hasDropdown) {
+                  setActiveDropdown(link.name);
+                  setHoveredItem(null);
+                } else {
+                  setActiveDropdown(null);
+                  setHoveredItem(null);
+                }
+              }}
             >
               <a 
                 href={link.href}
@@ -109,6 +179,7 @@ export default function Navbar() {
                                   <a 
                                     key={item.name} 
                                     href={item.href} 
+                                    onMouseEnter={() => setHoveredItem(item.name)}
                                     className="text-brand-navy hover:text-brand-orange text-[13px] font-bold transition-all duration-300 py-2.5 px-3.5 rounded-xl hover:bg-[#FAF9F5]/70 flex items-center justify-between group/link"
                                   >
                                     <div className="flex flex-col text-left">
@@ -129,30 +200,41 @@ export default function Navbar() {
                       </div>
 
                       {/* Right Side: Featured Rich Media Block */}
-                      {link.image && (
-                        <div className="w-[210px] shrink-0 rounded-xl overflow-hidden relative m-1 self-stretch min-h-[220px] flex flex-col justify-end p-5 group/image bg-brand-navy">
-                          <img 
-                            src={link.image} 
-                            alt={link.name} 
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out scale-105 group-hover/image:scale-100 opacity-75"
-                            referrerPolicy="no-referrer"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#201A5B] via-[#201A5B]/50 to-transparent z-10" />
-                          <div className="absolute inset-0 bg-brand-orange/5 mix-blend-color z-10" />
-                          
-                          <div className="relative z-20 flex flex-col items-start text-left">
-                            <span className="bg-white/10 backdrop-blur-md text-white text-[9px] uppercase tracking-[2px] font-extrabold px-2.5 py-1 rounded-full border border-white/20 mb-2">
-                              {link.name}
-                            </span>
-                            <h4 className="text-white text-[13.5px] font-sans font-bold leading-tight tracking-tight mb-0.5">
-                              {link.name === "Academics" ? "Shaping Greatness" : link.name === "About" ? "BeYourself Motto" : "Empowering Minds"}
-                            </h4>
-                            <p className="text-white/60 text-[9.5px] font-medium">
-                              Pavna International
-                            </p>
+                      {link.image && (() => {
+                        const hoveredData = hoveredItem ? itemMediaMap[hoveredItem] : null;
+                        const currentImage = hoveredData?.image || link.image;
+                        const currentTitle = hoveredData?.title || (link.name === "Academics" ? "Shaping Greatness" : link.name === "About" ? "BeYourself Motto" : "Empowering Minds");
+                        const currentSubtitle = hoveredData?.subtitle || "Pavna International";
+
+                        return (
+                          <div className="w-[210px] shrink-0 rounded-xl overflow-hidden relative m-1 self-stretch min-h-[220px] flex flex-col justify-end p-5 group/image bg-brand-navy">
+                            <motion.img 
+                              key={currentImage}
+                              initial={{ opacity: 0, scale: 1.08 }}
+                              animate={{ opacity: 0.75, scale: 1.05 }}
+                              transition={{ duration: 0.35, ease: "easeOut" }}
+                              src={currentImage} 
+                              alt={currentTitle} 
+                              className="absolute inset-0 w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#201A5B] via-[#201A5B]/50 to-transparent z-10" />
+                            <div className="absolute inset-0 bg-brand-orange/5 mix-blend-color z-10" />
+                            
+                            <div className="relative z-20 flex flex-col items-start text-left">
+                              <span className="bg-white/10 backdrop-blur-md text-white text-[9px] uppercase tracking-[2px] font-extrabold px-2.5 py-1 rounded-full border border-white/20 mb-2 transition-all">
+                                {hoveredData ? "Program" : link.name}
+                              </span>
+                              <h4 className="text-white text-[13.5px] font-sans font-bold leading-tight tracking-tight mb-0.5">
+                                {currentTitle}
+                              </h4>
+                              <p className="text-white/60 text-[9.5px] font-medium transition-all">
+                                {currentSubtitle}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        );
+                      })()}
                     </div>
                   </motion.div>
                 )}

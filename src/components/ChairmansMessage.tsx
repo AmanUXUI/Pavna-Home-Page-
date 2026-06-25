@@ -49,16 +49,16 @@ const ChairmansMessage: FC = () => {
       {/* 2. Main content section */}
       <section className="py-20 md:py-28 bg-white border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 lg:items-stretch items-start">
             
             {/* Visual Portrait Card Column */}
-            <div className="lg:col-span-5 relative group">
+            <div className="lg:col-span-5 relative group flex flex-col h-full">
               
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl bg-white border border-neutral-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-neutral-100 h-full min-h-[450px] lg:min-h-0 flex-1">
                 <img 
                   src="https://i.postimg.cc/J0twLXm8/Guest-Image-2.png" 
                   alt="Mr. Swapnil Jain, Chairman" 
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -86,9 +86,16 @@ const ChairmansMessage: FC = () => {
                 <p>
                   In an ever-evolving world, our students are groomed to be leaders of change, not just adapting to it but driving it forward. They will be the catalysts who inspire and empower others to embrace and lead change, shaping a brighter future for themselves and the world around them.
                 </p>
-                <p>
+              </div>
+
+              {/* Highlighted key statement callout */}
+              <div className="p-6 bg-[#FAF9F5] rounded-2xl border border-neutral-200/60 shadow-sm flex items-start gap-4 hover:border-brand-orange/30 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-brand-orange/5 text-brand-orange flex items-center justify-center shrink-0">
+                  <Award size={18} className="stroke-[1.75]" />
+                </div>
+                <p className="text-brand-navy text-[16px] font-serif font-bold italic leading-relaxed mb-0">
                   Our goal is to develop students who are not just learners but innovators, capable of applying their knowledge in real-world scenarios
-                </p>    
+                </p>
               </div>
 
               {/* Signatures & Controls */}
