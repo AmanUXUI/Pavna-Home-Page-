@@ -32,7 +32,7 @@ export const CONTENT = {
       image: "https://i.postimg.cc/W4cb9J5M/DSC06249-JPG.jpg",
       groups: [
         {
-          title: "Programmes",
+          title: "Academic",
           items: [
             { name: "Early Years (Age 3 To 5 Years)", href: "#early-years" },
             { name: "Primary (Age 5 To 11 Years)", href: "#primary" },

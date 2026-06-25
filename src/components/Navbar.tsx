@@ -1,8 +1,29 @@
 import { useState, useEffect } from 'react';
 import { CONTENT } from '../constants';
-import { Menu, X, ChevronDown, User } from 'lucide-react';
+import { Menu, X, ChevronDown, User, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
+
+const getItemDescription = (name: string): string => {
+  const descriptions: Record<string, string> = {
+    "About PIS": "Our vision, mission & heritage",
+    "Academic Team": "Meet our dedicated educators",
+    "Chairman's Message": "Leadership perspective & foresight",
+    "Principal's Message": "Welcome from our Head of School",
+    "Minds Behind PIS": "Advisors steering excellence",
+    "Early Years (Age 3 To 5 Years)": "Play-based inquiry & foundation",
+    "Primary (Age 5 To 11 Years)": "Core skills & creative learning",
+    "Lower Secondary (Age 11 to 14 Years)": "Structured disciplines & active discovery",
+    "Upper Secondary - IGCSE (Age 14 To 16 Years)": "Cambridge qualifications for 14-16",
+    "Advance - AS & A Level (Age 16 To 18 Years)": "Pre-university international standard",
+    "Blog": "Insights & stories from campus",
+    "Newsletter Archive": "Weekly chronicles and celebrations",
+    "Let's Talk": "Connect directly with our advisors",
+    "Careers": "Grow your teaching career with us",
+    "Enquire Now": "Start your admissions journey today"
+  };
+  return descriptions[name] || "Learn more about our programs";
+};
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,21 +86,22 @@ export default function Navbar() {
               <AnimatePresence>
                 {activeDropdown === link.name && link.hasDropdown && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full left-0 bg-white border border-black/5 shadow-2xl hidden lg:block rounded-2xl overflow-hidden mt-0"
+                    initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute top-full left-0 bg-white border border-neutral-100/90 shadow-[0_20px_50px_rgba(32,26,91,0.12)] hidden lg:flex rounded-2xl overflow-hidden mt-1 p-2"
                     style={{ 
                       width: 'max-content',
-                      minWidth: link.groups && link.groups.length > 1 ? '500px' : '280px'
                     }}
                   >
-                    <div className="flex items-stretch">
-                      <div className="p-6 flex-1" style={{ minWidth: link.groups && link.groups.length > 1 ? '340px' : '220px' }}>
+                    <div className="flex items-stretch gap-2">
+                      {/* Left Side: Navigation Links & Subheadings */}
+                      <div className="p-5 flex-1" style={{ minWidth: link.groups && link.groups.length > 1 ? '480px' : '280px' }}>
                         <div className="grid gap-6" style={{ gridTemplateColumns: link.groups && link.groups.length > 1 ? '1fr 1fr' : '1fr' }}>
                           {link.groups?.map((group) => (
                             <div key={group.title} className="flex flex-col gap-3">
-                              <h5 className="text-[11px] font-bold tracking-[1.5px] uppercase text-brand-orange">
+                              <h5 className="text-[10px] font-sans font-bold tracking-[2px] uppercase text-brand-orange/90 px-3">
                                 {group.title}
                               </h5>
                               <div className="flex flex-col gap-1">
@@ -87,10 +109,17 @@ export default function Navbar() {
                                   <a 
                                     key={item.name} 
                                     href={item.href} 
-                                    className="text-brand-navy hover:text-brand-orange text-[13px] font-medium transition-colors py-1.5 px-2 rounded-lg hover:bg-gray-50 flex items-center justify-between group/link"
+                                    className="text-brand-navy hover:text-brand-orange text-[13px] font-bold transition-all duration-300 py-2.5 px-3.5 rounded-xl hover:bg-[#FAF9F5]/70 flex items-center justify-between group/link"
                                   >
-                                    {item.name}
-                                    <div className="w-1 h-1 rounded-full bg-brand-orange opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                                    <div className="flex flex-col text-left">
+                                      <span className="leading-tight transition-colors duration-300">{item.name}</span>
+                                      <span className="text-[10.5px] font-medium text-neutral-400 mt-0.5 group-hover/link:text-brand-orange/60 transition-colors">
+                                        {getItemDescription(item.name)}
+                                      </span>
+                                    </div>
+                                    <div className="w-5 h-5 rounded-full bg-brand-orange/0 group-hover/link:bg-brand-orange/10 flex items-center justify-center transition-all">
+                                      <ArrowRight size={11} className="text-brand-orange opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
+                                    </div>
                                   </a>
                                 ))}
                               </div>
@@ -98,6 +127,32 @@ export default function Navbar() {
                           ))}
                         </div>
                       </div>
+
+                      {/* Right Side: Featured Rich Media Block */}
+                      {link.image && (
+                        <div className="w-[210px] shrink-0 rounded-xl overflow-hidden relative m-1 self-stretch min-h-[220px] flex flex-col justify-end p-5 group/image bg-brand-navy">
+                          <img 
+                            src={link.image} 
+                            alt={link.name} 
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out scale-105 group-hover/image:scale-100 opacity-75"
+                            referrerPolicy="no-referrer"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#201A5B] via-[#201A5B]/50 to-transparent z-10" />
+                          <div className="absolute inset-0 bg-brand-orange/5 mix-blend-color z-10" />
+                          
+                          <div className="relative z-20 flex flex-col items-start text-left">
+                            <span className="bg-white/10 backdrop-blur-md text-white text-[9px] uppercase tracking-[2px] font-extrabold px-2.5 py-1 rounded-full border border-white/20 mb-2">
+                              {link.name}
+                            </span>
+                            <h4 className="text-white text-[13.5px] font-sans font-bold leading-tight tracking-tight mb-0.5">
+                              {link.name === "Academics" ? "Shaping Greatness" : link.name === "About" ? "BeYourself Motto" : "Empowering Minds"}
+                            </h4>
+                            <p className="text-white/60 text-[9.5px] font-medium">
+                              Pavna International
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 )}

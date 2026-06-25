@@ -140,7 +140,7 @@ export default function AboutOverview() {
               <div className="absolute -inset-2 bg-gradient-to-r from-brand-orange to-brand-navy rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square">
                 <img 
-                  src="https://i.postimg.cc/QN6ZRdLY/DSC09241-JPG.jpg" 
+                  src="https://i.postimg.cc/bvBB4ttS/image.png" 
                   alt="School Philosophy" 
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.5s]"
                   referrerPolicy="no-referrer"
@@ -274,26 +274,37 @@ export default function AboutOverview() {
           </div>
 
           {/* Grid layout exactly matching the minimalist format in the screenshot */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 sm:gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {valuesItems.map((value) => (
-              <div 
+              <motion.div 
                 key={value.id}
-                className="flex items-start gap-5 group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: parseInt(value.id) * 0.05 }}
+                className="bg-white p-6 sm:p-8 rounded-2xl border border-neutral-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(32,26,91,0.06)] hover:border-brand-orange/40 hover:-translate-y-1.5 transition-all duration-500 group relative flex flex-col justify-between overflow-hidden"
               >
-                {/* Circular background icon badge styled per user request */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#f48120]/5 flex items-center justify-center text-[#f48120] shrink-0 transition-all duration-300 group-hover:bg-[#f48120] group-hover:text-white group-hover:scale-105">
-                  {value.icon}
+                {/* Number in the top-right corner */}
+                <span className="absolute top-4 right-6 text-[11px] font-sans font-bold text-neutral-300 tracking-widest select-none">
+                  {value.id}
+                </span>
+
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                  {/* Circular solid dark navy background icon badge */}
+                  <div className="w-14 h-14 rounded-full bg-[#201A5B] flex items-center justify-center text-white shrink-0 shadow-sm transition-all duration-500 group-hover:bg-brand-orange group-hover:scale-105">
+                    {value.icon}
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h4 className="text-[14px] sm:text-[15px] uppercase tracking-widest font-bold text-brand-navy mb-1.5 transition-colors duration-300 group-hover:text-brand-orange">
+                      {value.title}
+                    </h4>
+                    <p className="text-[13px] sm:text-[13.5px] text-neutral-500 leading-relaxed font-normal font-gill">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
-                
-                <div className="flex-1">
-                  <h4 className="text-[17px] sm:text-[18px] font-bold text-brand-navy mb-1.5 transition-colors duration-300 group-hover:text-brand-orange">
-                    {value.title}
-                  </h4>
-                  <p className="text-[14px] sm:text-[14.5px] text-neutral-600 leading-[23px] font-normal">
-                    {value.description}
-                  </p>
-                </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

@@ -107,7 +107,7 @@ const LowerSecondary: FC = () => {
             <div className="lg:col-span-5">
               <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-md border border-neutral-100">
                 <img 
-                  src="https://i.postimg.cc/XJHSYkDq/Low-Secondary.jpg" 
+                  src="https://i.postimg.cc/bvBB4ttS/image.png" 
                   alt="Cambridge Lower Secondary Learners" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -279,16 +279,41 @@ const LowerSecondary: FC = () => {
         </div>
       </section>
 
-      {/* 6. Return Button */}
-      <section id="lower-secondary-return" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <button 
-            onClick={() => window.location.hash = ''} 
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
-          >
-            Return to Homepage
-            <ArrowRight size={15} />
-          </button>
+      {/* 6. Page-to-Page Navigation */}
+      <section id="lower-secondary-navigation" className="py-16 bg-white border-t border-neutral-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            
+            {/* Previous button */}
+            <div className="w-full sm:w-auto text-left order-2 sm:order-1">
+              <a 
+                href="#primary"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+              >
+                &larr; Previous
+              </a>
+            </div>
+
+            {/* Center Home button */}
+            <button 
+              onClick={() => window.location.hash = ''} 
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer w-full sm:w-auto order-1 sm:order-2"
+            >
+              Return to Homepage
+              <ArrowRight size={15} />
+            </button>
+
+            {/* Next button */}
+            <div className="w-full sm:w-auto text-right order-3">
+              <a 
+                href="#upper-secondary"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+              >
+                Next &rarr;
+              </a>
+            </div>
+
+          </div>
         </div>
       </section>
 

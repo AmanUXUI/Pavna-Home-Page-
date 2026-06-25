@@ -445,14 +445,34 @@ const EarlyYears: FC = () => {
             })}
           </div>
 
-          <div className="mt-16 text-center">
-            <button 
-              onClick={() => window.location.hash = ''} 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
-            >
-              Return to Homepage
-              <ArrowRight size={15} />
-            </button>
+          <div className="mt-20 border-t border-neutral-100 pt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              
+              {/* Previous button - Hidden on first page */}
+              <div className="w-full sm:w-auto text-left order-2 sm:order-1">
+                <div className="hidden sm:block w-[120px]" />
+              </div>
+
+              {/* Center Home button */}
+              <button 
+                onClick={() => window.location.hash = ''} 
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer w-full sm:w-auto order-1 sm:order-2"
+              >
+                Return to Homepage
+                <ArrowRight size={15} />
+              </button>
+
+              {/* Next button */}
+              <div className="w-full sm:w-auto text-right order-3">
+                <a 
+                  href="#primary"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+                >
+                  Next &rarr;
+                </a>
+              </div>
+
+            </div>
           </div>
 
         </div>
