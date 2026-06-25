@@ -379,7 +379,7 @@ const UpperSecondary: FC = () => {
                 href="#lower-secondary"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
               >
-                &larr; Previous
+                &larr; Lower Secondary
               </a>
             </div>
 
@@ -398,7 +398,7 @@ const UpperSecondary: FC = () => {
                 href="#advance-as-a-level"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
               >
-                Next &rarr;
+                Advance - AS & A Level &rarr;
               </a>
             </div>
 

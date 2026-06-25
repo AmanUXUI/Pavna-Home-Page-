@@ -448,9 +448,14 @@ const EarlyYears: FC = () => {
           <div className="mt-20 border-t border-neutral-100 pt-12">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               
-              {/* Previous button - Hidden on first page */}
+              {/* Previous button - Minds Behind PIS */}
               <div className="w-full sm:w-auto text-left order-2 sm:order-1">
-                <div className="hidden sm:block w-[120px]" />
+                <a 
+                  href="#minds-behind-pis"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+                >
+                  &larr; Minds Behind PIS
+                </a>
               </div>
 
               {/* Center Home button */}
@@ -468,7 +473,7 @@ const EarlyYears: FC = () => {
                   href="#primary"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
                 >
-                  Next &rarr;
+                  Primary Years &rarr;
                 </a>
               </div>
 

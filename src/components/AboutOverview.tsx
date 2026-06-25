@@ -4,10 +4,13 @@ import {
   Handshake, 
   Users, 
   ArrowUpRight,
+  ArrowRight,
   Sprout,
   Rocket,
   Search,
-  Brain
+  Brain,
+  Compass,
+  Footprints
 } from 'lucide-react';
 
 export default function AboutOverview() {
@@ -43,13 +46,13 @@ export default function AboutOverview() {
       id: "03",
       title: "Compassion",
       description: "To Act With Empathy And Kindness Toward All Living Beings.",
-      icon: <Users size={24} />
+      icon: <Heart size={24} />
     },
     {
       id: "04",
       title: "Respect",
       description: "To Honor Self, Others, Nature And The Truth That Binds Them All.",
-      icon: <Heart size={24} />
+      icon: <Handshake size={24} />
     },
     {
       id: "05",
@@ -67,7 +70,7 @@ export default function AboutOverview() {
       id: "07",
       title: "Inclusivity",
       description: "To Embrace Diversity, Respect Differences, Nurture Collaboration And Build Unity In Community.",
-      icon: <Handshake size={24} />
+      icon: <Users size={24} />
     }
   ];
 
@@ -116,27 +119,12 @@ export default function AboutOverview() {
       {/* 2. Our Philosophy Block (OCR Page 1) */}
       <section className="py-16 md:py-24 border-b border-gray-100/85">
         <div className="max-w-7xl mx-auto px-6">
-          
-          {/* Section Subhead Accent */}
-          <div className="flex items-center justify-center gap-3 mb-6 w-full">
-            <div className="w-12 h-[2px] bg-brand-orange"></div>
-            <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange text-center">
-              Our Philosophy
-            </span>
-            <div className="w-12 h-[2px] bg-brand-orange"></div>
-          </div>
-
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-[42px] font-sans font-bold md:leading-[50px] tracking-tight text-brand-navy">
-              Where Growth Meets Tradition
-            </h2>
-          </div>
 
           {/* Core Structure with Visual Balance */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Box Image */}
-            <div className="lg:col-span- così lg:col-span-5 relative group">
+            <div className="lg:col-span-5 relative group">
               <div className="absolute -inset-2 bg-gradient-to-r from-brand-orange to-brand-navy rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square">
                 <img 
@@ -146,30 +134,33 @@ export default function AboutOverview() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
-                
-
               </div>
             </div>
 
             {/* Right Side Content Paragraphs */}
-            <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              
+              {/* Section Subhead Accent */}
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-[2px] bg-brand-orange"></div>
+                <span className="text-[11px] leading-[28px] tracking-[1.65px] uppercase font-bold text-brand-orange">
+                  Our Philosophy
+                </span>
+              </div>
+
+              {/* Main Heading */}
+              <h2 className="text-3xl md:text-[42px] font-sans font-bold md:leading-[50px] tracking-tight text-brand-navy mb-6">
+                Where Growth Meets Tradition
+              </h2>
+
               <div className="text-[15px] sm:text-[16px] leading-[26px] text-neutral-600 font-normal space-y-6">
                 <p>
                   At Pavna International School, we believe education should grow like a tree, reaching beyond the walls of a classroom. Our students are encouraged to explore, question, and learn through real experiences rather than just textbooks. This freedom to explore builds curiosity, confidence, and a genuine love for learning.
                 </p>
 
                 <p>
-                  This spirit of growth is rooted in a deeper purpose. Pavna International School was founded by the visionaries behind Teerthdham Mangalayatan, Hathras, and Chidayatan, Hastinapur, with a simple goal: to bring academic excellence and spiritual values together under one roof, especially for Jain students who wish to grow in both knowledge and faith.
+                  In the diverse ecosystem of Pavna, every student, like a unique leaf on a tree, is given the liberty to chart their own educational journey. With a curriculum offering a wide spectrum of subjects, students discover and hone their passions. At PIS, we believe in nurturing the roots of curiosity and critical thinking, allowing each student to grow in their own direction.
                 </p>
-
-                <div className="p-6 bg-[#FAF9F5] border-l-4 border-brand-orange rounded-r-xl">
-                  <p className="text-[15px] sm:text-[16px] leading-[26px] text-brand-navy font-semibold mb-2">
-                    Visionary Leadership Legacy:
-                  </p>
-                  <p className="text-[15px] sm:text-[16px] leading-[26px] text-neutral-600">
-                    The school carries forward the vision of the late Shri Pavan Jain, now guided by his son, Mr. Swapnil Jain. Together with Teerthdham Mangalayatan, Pavna offers a calm, value-driven environment where children don't just study, they grow as individuals. It's this balance of strong academics and strong values that shapes well-rounded students, ready for life beyond school.
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -199,6 +190,11 @@ export default function AboutOverview() {
               </span>
 
               <div>
+                {/* Circular light orange background icon badge transitioning to solid orange */}
+                <div className="w-14 h-14 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-6 shrink-0 shadow-sm transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white group-hover:scale-105 border border-brand-orange/5">
+                  <Compass size={24} className="stroke-[2]" />
+                </div>
+                
                 <h3 className="text-2xl sm:text-3xl font-sans font-bold text-brand-navy mb-6 group-hover:text-brand-orange transition-colors">
                   Our Vision
                 </h3>
@@ -230,6 +226,11 @@ export default function AboutOverview() {
               </span>
 
               <div>
+                {/* Circular light orange background icon badge transitioning to solid orange */}
+                <div className="w-14 h-14 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-6 shrink-0 shadow-sm transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white group-hover:scale-105 border border-brand-orange/5">
+                  <Footprints size={24} className="stroke-[2]" />
+                </div>
+
                 <h3 className="text-2xl sm:text-3xl font-sans font-bold text-brand-navy mb-6 group-hover:text-brand-orange transition-colors">
                   Our Mission
                 </h3>
@@ -282,7 +283,7 @@ export default function AboutOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: parseInt(value.id) * 0.05 }}
-                className="bg-white p-6 sm:p-8 rounded-2xl border border-neutral-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(32,26,91,0.06)] hover:border-brand-orange/40 hover:-translate-y-1.5 transition-all duration-500 group relative flex flex-col justify-between overflow-hidden"
+                className="bg-white p-6 sm:p-8 rounded-2xl border border-neutral-200/60 shadow-sm hover:shadow-none hover:border-brand-orange hover:-translate-y-1 transition-all duration-300 group relative flex flex-col justify-between overflow-hidden"
               >
                 {/* Number in the top-right corner */}
                 <span className="absolute top-4 right-6 text-[11px] font-sans font-bold text-neutral-300 tracking-widest select-none">
@@ -290,22 +291,53 @@ export default function AboutOverview() {
                 </span>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-                  {/* Circular solid dark navy background icon badge */}
-                  <div className="w-14 h-14 rounded-full bg-[#201A5B] flex items-center justify-center text-white shrink-0 shadow-sm transition-all duration-500 group-hover:bg-brand-orange group-hover:scale-105">
+                  {/* Circular light orange background icon badge transitioning to solid orange */}
+                  <div className="w-14 h-14 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange shrink-0 shadow-sm transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white group-hover:scale-105 border border-brand-orange/5">
                     {value.icon}
                   </div>
                   
                   <div className="flex-1">
-                    <h4 className="text-[14px] sm:text-[15px] uppercase tracking-widest font-bold text-brand-navy mb-1.5 transition-colors duration-300 group-hover:text-brand-orange">
+                    <h4 className="text-[17px] sm:text-[18px] font-bold text-brand-navy mb-1.5 transition-colors duration-300 group-hover:text-brand-orange">
                       {value.title}
                     </h4>
-                    <p className="text-[13px] sm:text-[13.5px] text-neutral-500 leading-relaxed font-normal font-gill">
+                    <p className="text-[13.5px] sm:text-[14px] text-neutral-500 leading-relaxed font-normal font-gill">
                       {value.description}
                     </p>
                   </div>
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Page-to-Page Navigation */}
+          <div className="mt-20 border-t border-neutral-100 pt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              
+              {/* Previous spacer */}
+              <div className="w-full sm:w-auto text-left order-2 sm:order-1">
+                <div className="hidden sm:block w-[120px]" />
+              </div>
+
+              {/* Center Home button */}
+              <button 
+                onClick={() => window.location.hash = ''} 
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer w-full sm:w-auto order-1 sm:order-2"
+              >
+                Return to Homepage
+                <ArrowRight size={15} />
+              </button>
+
+              {/* Next button */}
+              <div className="w-full sm:w-auto text-right order-3">
+                <a 
+                  href="#chairmans-message"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+                >
+                  Chairman's Message &rarr;
+                </a>
+              </div>
+
+            </div>
           </div>
 
         </div>

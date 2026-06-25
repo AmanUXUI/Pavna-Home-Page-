@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Quote, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const PrincipalsMessage: FC = () => {
@@ -62,14 +62,6 @@ const PrincipalsMessage: FC = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-
-              {/* Highlighting Quote bubble */}
-              <div className="mt-8 bg-[#FDFCFB] border-l-4 border-brand-orange p-6 rounded-r-2xl shadow-sm">
-                <Quote className="text-brand-orange mb-3" size={32} fill="currentColor" />
-                <p className="italic text-neutral-700 text-sm md:text-base leading-relaxed font-medium">
-                  "Our “Be yourself” philosophy celebrates individuality, encouraging students to explore their unique talents and think independently."
-                </p>
-              </div>
             </div>
 
             {/* Message Text Column */}
@@ -94,6 +86,9 @@ const PrincipalsMessage: FC = () => {
                 <p>
                   Our Cambridge Curriculum emphasizes not just academic excellence but also essential life skills, ensuring holistic development. We balance rigorous academics with enriching co-curricular activities, including sports and arts, to cultivate varied talents. Our “Be yourself” philosophy celebrates individuality, encouraging students to explore their unique talents and think independently. Embracing one’s true self is at the heart of the PIS experience.
                 </p>
+                <p>
+                Our “Be yourself” philosophy celebrates individuality, encouraging students to explore their unique talents and think independently
+                </p>
               </div>
 
               {/* Signatures & Controls */}
@@ -113,6 +108,44 @@ const PrincipalsMessage: FC = () => {
                 </button>
               </div>
 
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Page-to-Page Navigation */}
+      <section className="py-16 bg-white border-t border-neutral-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            
+            {/* Previous button */}
+            <div className="w-full sm:w-auto text-left order-2 sm:order-1">
+              <a 
+                href="#chairmans-message"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+              >
+                &larr; Chairman's Message
+              </a>
+            </div>
+
+            {/* Center Home button */}
+            <button 
+              onClick={() => window.location.hash = ''} 
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer w-full sm:w-auto order-1 sm:order-2"
+            >
+              Return to Homepage
+              <ArrowRight size={15} />
+            </button>
+
+            {/* Next button */}
+            <div className="w-full sm:w-auto text-right order-3">
+              <a 
+                href="#minds-behind-pis"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+              >
+                Minds Behind PIS &rarr;
+              </a>
             </div>
 
           </div>

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Quote, ArrowRight, BookOpen, Star, ShieldCheck, Award } from 'lucide-react';
+import { ArrowRight, BookOpen, Star, ShieldCheck, Award } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const ChairmansMessage: FC = () => {
@@ -62,14 +62,6 @@ const ChairmansMessage: FC = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-
-              {/* Highlighting Quote bubble */}
-              <div className="mt-8 bg-[#FDFCFB] border-l-4 border-brand-orange p-6 rounded-r-2xl shadow-sm">
-                <Quote className="text-brand-orange mb-3" size={32} fill="currentColor" />
-                <p className="italic text-neutral-700 text-sm md:text-base leading-relaxed font-medium">
-                  "Our goal is to develop students who are not just learners but innovators, capable of applying their knowledge in real-world scenarios."
-                </p>
-              </div>
             </div>
 
             {/* Message Text Column */}
@@ -94,6 +86,9 @@ const ChairmansMessage: FC = () => {
                 <p>
                   In an ever-evolving world, our students are groomed to be leaders of change, not just adapting to it but driving it forward. They will be the catalysts who inspire and empower others to embrace and lead change, shaping a brighter future for themselves and the world around them.
                 </p>
+                <p>
+                  Our goal is to develop students who are not just learners but innovators, capable of applying their knowledge in real-world scenarios
+                </p>    
               </div>
 
               {/* Signatures & Controls */}
@@ -113,6 +108,44 @@ const ChairmansMessage: FC = () => {
                 </button>
               </div>
 
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Page-to-Page Navigation */}
+      <section className="py-16 bg-white border-t border-neutral-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            
+            {/* Previous button */}
+            <div className="w-full sm:w-auto text-left order-2 sm:order-1">
+              <a 
+                href="#about-overview"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+              >
+                &larr; About PIS
+              </a>
+            </div>
+
+            {/* Center Home button */}
+            <button 
+              onClick={() => window.location.hash = ''} 
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-orange hover:bg-brand-dark-orange text-white text-[13px] font-bold tracking-wider transition-all shadow-md active:scale-95 cursor-pointer w-full sm:w-auto order-1 sm:order-2"
+            >
+              Return to Homepage
+              <ArrowRight size={15} />
+            </button>
+
+            {/* Next button */}
+            <div className="w-full sm:w-auto text-right order-3">
+              <a 
+                href="#principals-message"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-200 hover:border-brand-orange hover:text-brand-orange text-brand-navy text-[13px] font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer bg-white w-full sm:w-auto font-sans"
+              >
+                Principal's Message &rarr;
+              </a>
             </div>
 
           </div>
